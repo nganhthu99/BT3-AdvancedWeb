@@ -33,7 +33,7 @@ export const calculateWinner = function (squares, step, boardSize, playerMove) {
             line.push(row*boardSize+i)
         } else break;
     }
-    if (countLeft + countRight === winState - 1)
+    if (countLeft + countRight >= winState - 1)
         return {
             line: line,
             winner: playerMove
@@ -55,7 +55,7 @@ export const calculateWinner = function (squares, step, boardSize, playerMove) {
             line.push(i*boardSize+column)
         } else break;
     }
-    if (countLeft + countRight === winState - 1)
+    if (countLeft + countRight >= winState - 1)
         return {
             line: line,
             winner: playerMove
@@ -85,7 +85,7 @@ export const calculateWinner = function (squares, step, boardSize, playerMove) {
         i++;
         j++;
     }
-    if (countLeft + countRight === winState - 1)
+    if (countLeft + countRight >= winState - 1)
         return {
             line: line,
             winner: playerMove
@@ -115,7 +115,7 @@ export const calculateWinner = function (squares, step, boardSize, playerMove) {
         i--;
         j++;
     }
-    if (countLeft + countRight === winState - 1)
+    if (countLeft + countRight >= winState - 1)
         return {
             line: line,
             winner: playerMove
