@@ -42,6 +42,8 @@ export default function Game() {
     const handleBoardSizeInput = (e) => {
         if (e.keyCode === 13) {
             let input = Number(e.target.value)
+            if (Number.isNaN(input))
+                return
             setBoardSize(input)
             setHistory([
                 {
@@ -95,7 +97,7 @@ export default function Game() {
             </div>
             <div className="game-info">
                 <div className='board-size'>
-                    <div>Board size:</div>
+                    <div>Board size (Press enter to apply): </div>
                     <input defaultValue="3" onKeyUp={(e) => handleBoardSizeInput(e)}/>
                 </div>
                 <div className="status">{status}</div>
